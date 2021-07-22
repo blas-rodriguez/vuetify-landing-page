@@ -5,20 +5,19 @@
         <v-col cols="10">
           <v-row justify="center">
             <v-col cols="12" sm="5">
-              <h1 class="font-weight-light display-1">Contate-nos</h1>
+              <h1 class="font-weight-light display-1">Contatenos</h1>
               <h3 class="font-weight-light mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
-                explicabo commodi quisquam asperiores dolore ad enim provident
-                veniam perferendis voluptate, perspiciatis.
+                Complete el formulario y responderemos a la brevedad.
               </h3>
               <h3 class="font-weight-light mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing.
+               
               </h3>
               <h3 class="font-weight-light mt-3">
-                Telefone: +xx (xx) xxxxx-xxxx
+                Telefonos: <br>+54 9 3804564857 <br>
++54 9 3804253038
               </h3>
               <h3 class="font-weight-light">
-                Email: email@email.com
+                Email: bluestar@gmail.com
               </h3>
             </v-col>
             <v-col cols="12" sm="7">
@@ -26,7 +25,7 @@
                 <v-text-field
                     v-model="name"
                     :rules="nameRules"
-                    label="Nome"
+                    label="Nombre"
                     required
                 ></v-text-field>
 
@@ -40,7 +39,7 @@
                 <v-textarea
                     v-model="textArea"
                     :rules="textAreaRules"
-                    label="Mensagem"
+                    label="Mensage"
                     required
                 />
 

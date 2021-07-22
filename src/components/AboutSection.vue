@@ -5,9 +5,9 @@
         <v-col cols="10">
           <v-row align="center" justify="center">
             <v-col cols="12" md="7">
-              <h1 class="font-weight-light display-2">Sobre</h1>
+              <h1 class="font-weight-light display-2">Nosotros</h1>
               <h1 class="font-weight-light display-1 mb-3">
-                Lorem ipsum dolor!
+                Consultoría de negocios.
               </h1>
               <v-row>
                 <v-col cols="12" class="d-flex align-center">
@@ -17,9 +17,7 @@
                     class="mr-4"
                   />
                   <p class="text-justify">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Desde entonces ofrecemos servicios a empresas del país y el exterior, basándonos en nuestra amplia experiencia en el liderazgo de proyectos de software, diseño y desarrollo de aplicaciones, animación y tecnología aplicada a mejorar la gestión de nuestros clientes.
                   </p>
                 </v-col>
                 <v-col cols="12" class="d-flex align-center">
@@ -29,9 +27,7 @@
                     class="mr-4"
                   />
                   <p class="text-justify">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Desde entonces ofrecemos servicios a empresas del país y el exterior, basándonos en nuestra amplia experiencia en el liderazgo de proyectos de software, diseño y desarrollo de aplicaciones, animación y tecnología aplicada a mejorar la gestión de nuestros clientes.
                   </p>
                 </v-col>
                 <v-col cols="12" class="d-flex align-center">
@@ -41,9 +37,7 @@
                     class="mr-4"
                   />
                   <p class="text-justify">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Resolvemos necesidades para diversos tipos de clientes y mercados.Brindamos la información necesaria para evaluar, planificar y tomar decisiones.Diseñamos, implementamos y brindamos soluciones globales, para diversos tipos de negocio.
                   </p>
                 </v-col>
               </v-row>
