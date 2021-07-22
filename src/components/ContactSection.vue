@@ -132,7 +132,7 @@ export default {
   }),
   methods: {
     submit() {
-      /*db.collection("contactData").add({
+      db.collection("contactData").add({
         name: this.name,
         email: this.email,
         message: this.textArea
@@ -144,7 +144,7 @@ export default {
         this.snackbar.text = "Erro ao enviar mensagem"
         this.snackbar.color = "danger"
         this.snackbar.enabled = true
-      })*/
+      })
     }
   }
 };
