@@ -67,9 +67,9 @@
         <v-btn text @click="$vuetify.goTo('#download')">
           <span class="mr-2">Descargas</span>
         </v-btn>
-        <v-btn text @click="$vuetify.goTo('#pricing')">
+        <!-- <v-btn text @click="$vuetify.goTo('#pricing')">
           <span class="mr-2">Precios</span>
-        </v-btn>
+        </v-btn> -->
         <v-btn rounded outlined text @click="$vuetify.goTo('#contact')">
           <span class="mr-2">Contacto</span>
         </v-btn>

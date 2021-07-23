@@ -5,7 +5,7 @@
       <home />
       <about />
       <download />
-      <pricing />
+      <!-- <pricing /> -->
       <contact />
     </v-main>
     <v-scale-transition>

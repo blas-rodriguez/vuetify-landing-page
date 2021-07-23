@@ -9,19 +9,68 @@
               <h3 class="font-weight-light mt-3">
                 Complete el formulario y responderemos a la brevedad.
               </h3>
+              <h3 class="font-weight-light mt-3"></h3>
               <h3 class="font-weight-light mt-3">
-               
+                Telefonos: <br />+54 9 3804564857 <br />
+                +54 9 3804253038
               </h3>
-              <h3 class="font-weight-light mt-3">
-                Telefonos: <br>+54 9 3804564857 <br>
-+54 9 3804253038
-              </h3>
-              <h3 class="font-weight-light">
-                Email: bluestar@gmail.com
-              </h3>
+              <h3 class="font-weight-light">Email: bluestar@gmail.com</h3>
             </v-col>
             <v-col cols="12" sm="7">
-              <v-form ref="form" v-model="valid" :lazy-validation="lazy">
+               <v-form ref="form" v-model="valid" :lazy-validation="lazy" @submit.prevent="sendEmail" >
+              <!-- <form class="contact-form" @submit.prevent="sendEmail"> -->
+              <!-- <form class="contact-form" @submit.prevent="sendEmail"> -->
+                <v-text-field
+                    v-model="name"
+                    :rules="nameRules"
+                    label="Nombre"
+                    name="user_name"
+                    required
+                ></v-text-field>
+                <!-- <input type="text" name="user_name" /> -->
+                <v-text-field
+                    v-model="email"
+                    :rules="emailRules"
+                    label="E-mail"
+                    name="user_email"
+                    required
+                ></v-text-field>
+                <!-- <input type="email" name="user_email" /> -->
+                <v-textarea
+                    v-model="textArea"
+                    :rules="textAreaRules"
+                    label="Mensage"
+                    name="message"
+                    required
+                />
+                <!-- <textarea name="message"></textarea> -->
+                <v-btn
+                :disabled="!valid"
+                    color="primary"
+                    :dark="valid"
+                    rounded
+                    block
+                    class="mt-3"
+                    value="Send"
+                   type="submit">
+                <input type="submit" value="Enviar" />
+                </v-btn>
+              <!-- <v-btn
+                    :disabled="!valid"
+                    color="primary"
+                    :dark="valid"
+                    rounded
+                    block
+                    class="mt-3"
+                    value="Send"
+                   type="submit"
+                     
+                >
+                  Enviar
+                </v-btn> -->
+              <!-- </form> -->
+              </v-form>
+              <!-- <v-form ref="form" v-model="valid" :lazy-validation="lazy"  @submit.prevent="sendEmail">
                 <v-text-field
                     v-model="name"
                     :rules="nameRules"
@@ -54,30 +103,26 @@
                 >
                   Enviar
                 </v-btn>
-              </v-form>
+              </v-form> -->
             </v-col>
           </v-row>
         </v-col>
       </v-row>
     </v-container>
     <div class="svg-border-waves text-white">
-      <v-img src="~@/assets/img/borderWavesBlue.svg"/>
+      <v-img src="~@/assets/img/borderWavesBlue.svg" />
     </div>
     <v-snackbar
-        v-model="snackbar.enabled"
-        timeout="3000"
-        right
-        top
-        :color="snackbar.color"
+      v-model="snackbar.enabled"
+      timeout="3000"
+      right
+      top
+      :color="snackbar.color"
     >
       {{ snackbar.text }}
 
       <template v-slot:action="{ attrs }">
-        <v-btn
-            text
-            v-bind="attrs"
-            @click="snackbar.enabled = false"
-        >
+        <v-btn text v-bind="attrs" @click="snackbar.enabled = false">
           Fechar
         </v-btn>
       </template>
@@ -98,11 +143,14 @@
   width: 100%;
   overflow: hidden;
 }
-
 </style>
 
 <script>
 // import {db} from '@/main'
+import emailjs from "emailjs-com";
+export const EMAILJS_SERVICE_ID = process.env.VUE_APP_EMAILJS_SERVICE_ID;
+export const EMAILJS_TEMPLATE_ID = process.env.VUE_APP_EMAILJS_TEMPLATE_ID;
+export const EMAILJS_USER_ID = process.env.VUE_APP_EMAILJS_USER_ID;
 
 export default {
   data: () => ({
@@ -126,26 +174,43 @@ export default {
     lazy: false,
     snackbar: {
       enabled: false,
-      text: '',
-      color: ''
-    }
+      text: "",
+      color: "",
+    },
   }),
   methods: {
-    submit() {
-      db.collection("contactData").add({
-        name: this.name,
-        email: this.email,
-        message: this.textArea
-      }).then(() => {
-        this.snackbar.text = "Mensagem enviada com sucesso"
-        this.snackbar.color = "success"
-        this.snackbar.enabled = true
-      }).catch(() => {
-        this.snackbar.text = "Erro ao enviar mensagem"
-        this.snackbar.color = "danger"
-        this.snackbar.enabled = true
-      })
-    }
-  }
+    // submit(e) {
+      sendEmail: (e) => {
+        emailjs
+          .sendForm(
+            EMAILJS_SERVICE_ID,
+            EMAILJS_TEMPLATE_ID,
+            e.target,
+            EMAILJS_USER_ID
+          )
+          .then(
+            (result) => {
+              console.log("SUCCESS!", result.status, result.text);
+            },
+            (error) => {
+              console.log("FAILED...", error);
+            }
+          );
+      },
+      //   db.collection("contactData").add({
+      //     name: this.name,
+      //     email: this.email,
+      //     message: this.textArea
+      //   }).then(() => {
+      //     this.snackbar.text = "Mensagem enviada com sucesso"
+      //     this.snackbar.color = "success"
+      //     this.snackbar.enabled = true
+      //   }).catch(() => {
+      //     this.snackbar.text = "Erro ao enviar mensagem"
+      //     this.snackbar.color = "danger"
+      //     this.snackbar.enabled = true
+      //   })
+    // },
+  },
 };
 </script>
