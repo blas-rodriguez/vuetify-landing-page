@@ -65,7 +65,7 @@
           <span class="mr-2">Nosotros</span>
         </v-btn>
         <v-btn text @click="$vuetify.goTo('#download')">
-          <span class="mr-2">Descargas</span>
+          <span class="mr-2">Proyectos</span>
         </v-btn>
         <!-- <v-btn text @click="$vuetify.goTo('#pricing')">
           <span class="mr-2">Precios</span>
