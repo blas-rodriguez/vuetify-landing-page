@@ -5,7 +5,7 @@
         <v-col cols="10">
           <v-row justify="center">
             <v-col cols="12" sm="5">
-              <h1 class="font-weight-light display-1">Contatenos</h1>
+              <h1 class="font-weight-light display-1">Contáctenos</h1>
               <h3 class="font-weight-light mt-3">
                 Complete el formulario y responderemos a la brevedad.
               </h3>
