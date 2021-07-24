@@ -17,93 +17,53 @@
               <h3 class="font-weight-light">Email: bluestar@gmail.com</h3>
             </v-col>
             <v-col cols="12" sm="7">
-               <v-form ref="form" v-model="valid" :lazy-validation="lazy" @submit.prevent="sendEmail" >
-              <!-- <form class="contact-form" @submit.prevent="sendEmail"> -->
-              <!-- <form class="contact-form" @submit.prevent="sendEmail"> -->
+              <v-form
+                ref="form"
+                v-model="valid"
+                :lazy-validation="lazy"
+                @submit.prevent="sendEmail"
+              >
                 <v-text-field
-                    v-model="name"
-                    :rules="nameRules"
-                    label="Nombre"
-                    name="user_name"
-                    required
+                  v-model="name"
+                  :rules="nameRules"
+                  label="Nombre"
+                  name="user_name"
+                  required
                 ></v-text-field>
-                <!-- <input type="text" name="user_name" /> -->
                 <v-text-field
-                    v-model="email"
-                    :rules="emailRules"
-                    label="E-mail"
-                    name="user_email"
-                    required
+                  v-model="email"
+                  :rules="emailRules"
+                  label="E-mail"
+                  name="user_email"
+                  required
                 ></v-text-field>
-                <!-- <input type="email" name="user_email" /> -->
                 <v-textarea
-                    v-model="textArea"
-                    :rules="textAreaRules"
-                    label="Mensage"
-                    name="message"
-                    required
+                  v-model="textArea"
+                  :rules="textAreaRules"
+                  label="Mensage"
+                  name="message"
+                  required
                 />
-                <!-- <textarea name="message"></textarea> -->
                 <v-btn
-                :disabled="!valid"
-                    color="primary"
-                    :dark="valid"
-                    rounded
-                    block
-                    class="mt-3"
-                    value="Send"
-                   type="submit">
-                <input type="submit" value="Enviar" />
-                </v-btn>
-              <!-- <v-btn
-                    :disabled="!valid"
-                    color="primary"
-                    :dark="valid"
-                    rounded
-                    block
-                    class="mt-3"
-                    value="Send"
-                   type="submit"
-                     
+                  :disabled="!valid"
+                  color="primary"
+                  :dark="valid"
+                  rounded
+                  block
+                  class="mt-3"
+                  value="Send"
+                  type="submit"
+                  :loading="loading4"
+                  
                 >
-                  Enviar
-                </v-btn> -->
-              <!-- </form> -->
+                  <input type="submit" value="Enviar" />
+                  <template v-slot:loader>
+                    <span class="custom-loader">
+                      <v-icon light>mdi-cached</v-icon>
+                    </span>
+                  </template>
+                </v-btn>
               </v-form>
-              <!-- <v-form ref="form" v-model="valid" :lazy-validation="lazy"  @submit.prevent="sendEmail">
-                <v-text-field
-                    v-model="name"
-                    :rules="nameRules"
-                    label="Nombre"
-                    required
-                ></v-text-field>
-
-                <v-text-field
-                    v-model="email"
-                    :rules="emailRules"
-                    label="E-mail"
-                    required
-                ></v-text-field>
-
-                <v-textarea
-                    v-model="textArea"
-                    :rules="textAreaRules"
-                    label="Mensage"
-                    required
-                />
-
-                <v-btn
-                    :disabled="!valid"
-                    color="primary"
-                    :dark="valid"
-                    rounded
-                    block
-                    class="mt-3"
-                    @click="submit"
-                >
-                  Enviar
-                </v-btn>
-              </v-form> -->
             </v-col>
           </v-row>
         </v-col>
@@ -143,6 +103,42 @@
   width: 100%;
   overflow: hidden;
 }
+.custom-loader {
+  animation: loader 1s infinite;
+  display: flex;
+}
+@-moz-keyframes loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 </style>
 
 <script>
@@ -154,6 +150,12 @@ export const EMAILJS_USER_ID = process.env.VUE_APP_EMAILJS_USER_ID;
 
 export default {
   data: () => ({
+    loader: false,
+    loading: false,
+    loading2: false,
+    loading3: false,
+    loading4: false,
+    loading5: false,
     icons: ["fa-facebook", "fa-twitter", "fa-linkedin", "fa-instagram"],
     valid: true,
     name: "",
@@ -178,39 +180,38 @@ export default {
       color: "",
     },
   }),
+  watch: {
+    
+  },
+
   methods: {
-    // submit(e) {
-      sendEmail: (e) => {
-        emailjs
-          .sendForm(
-            EMAILJS_SERVICE_ID,
-            EMAILJS_TEMPLATE_ID,
-            e.target,
-            EMAILJS_USER_ID
-          )
-          .then(
-            (result) => {
-              console.log("SUCCESS!", result.status, result.text);
-            },
-            (error) => {
-              console.log("FAILED...", error);
-            }
-          );
-      },
-      //   db.collection("contactData").add({
-      //     name: this.name,
-      //     email: this.email,
-      //     message: this.textArea
-      //   }).then(() => {
-      //     this.snackbar.text = "Mensagem enviada com sucesso"
-      //     this.snackbar.color = "success"
-      //     this.snackbar.enabled = true
-      //   }).catch(() => {
-      //     this.snackbar.text = "Erro ao enviar mensagem"
-      //     this.snackbar.color = "danger"
-      //     this.snackbar.enabled = true
-      //   })
-    // },
+    loaderON() {
+      this.loading4=true;
+    },
+    loaderOff() {
+      this.loading4=false;
+    },
+    sendEmail: function(e) {
+    // sendEmail()   {
+       this.loading4=true;
+      emailjs
+        .sendForm(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          e.target,
+          EMAILJS_USER_ID
+        )
+        .then(
+          (result) => {
+            // console.log("SUCCESS!", result.status, result.text);
+             this.loading4=false;
+          },
+          (error) => {
+            // console.log("FAILED...", error);
+            this.loading4=false;
+          }
+        );
+    },
   },
 };
 </script>
