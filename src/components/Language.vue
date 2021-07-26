@@ -32,18 +32,7 @@
   <!-- </div> -->
 </template>
 
-<style>
-.country-flag {
-  padding: 100px;
-  margin: 10px;
-  padding-left: 100px;
-}
-.v-list-item {
-  padding: 100px;
-  /* margin: 100px;
-  padding-left: 100px; */
-}
-</style>
+
 
 <script>
 import { i18n } from "@/plugins/i18n";
