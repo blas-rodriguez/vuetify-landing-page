@@ -2,7 +2,9 @@
   <v-app>
     <navigation :color="color" :flat="flat" />
     <v-main class="pt-0">
+      
       <home />
+      
       <about />
       <download />
       <!-- <pricing /> -->
@@ -37,6 +39,7 @@
 </style>
 
 <script>
+import Language from './components/Language.vue'
 import navigation from "./components/Navigation";
 import foote from "./components/Footer";
 import home from "./components/HomeSection";
@@ -49,6 +52,7 @@ export default {
   name: "App",
 
   components: {
+    Language,
     navigation,
     foote,
     home,

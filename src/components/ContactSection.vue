@@ -11,10 +11,10 @@
               </h3>
               <h3 class="font-weight-light mt-3"></h3>
               <h3 class="font-weight-light mt-3">
-                Telefonos: <br />+54 9 3804564857 <br />
-                +54 9 3804253038
+                whatsapp: <br /><a href="https://api.whatsapp.com/send?phone=543804564857" target="_blank" rel="noopener noreferrer">Blas Rodriguez</a> <br />
+                <a href="https://api.whatsapp.com/send?phone=543804253038" target="_blank" rel="noopener noreferrer">Florencia Barrera</a>
               </h3>
-              <h3 class="font-weight-light">Email: bluestar@gmail.com</h3>
+              <h3 class="font-weight-light">Email: goodjobsistemas@gmail.com</h3>
             </v-col>
             <v-col cols="12" sm="7">
               <v-form

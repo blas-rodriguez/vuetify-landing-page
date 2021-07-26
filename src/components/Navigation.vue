@@ -13,8 +13,8 @@
             <img src="@/assets/img/logo.png" alt="Logo" />
           </v-list-item-avatar>
           <v-list-item-content>
-            <v-list-item-title class="title">Calango</v-list-item-title>
-            <v-list-item-subtitle>WEB</v-list-item-subtitle>
+            <v-list-item-title class="title">Good Job</v-list-item-title>
+            <!-- <v-list-item-subtitle>WEB</v-list-item-subtitle> -->
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -71,8 +71,13 @@
           <span class="mr-2">Precios</span>
         </v-btn> -->
         <v-btn rounded outlined text @click="$vuetify.goTo('#contact')">
-          <span class="mr-2">Contacto</span>
+          <span class="mr-2">Contácto</span>
         </v-btn>
+        <v-btn >
+          <Language />
+        </v-btn>
+        
+        
       </div>
     </v-app-bar>
   </div>
@@ -90,16 +95,20 @@
 </style>
 
 <script>
+import Language from './Language.vue'
 export default {
+  components: {
+    Language,
+  },
   data: () => ({
     drawer: null,
     isXs: false,
     items: [
-      ["mdi-home-outline", "Home", "#hero"],
-      ["mdi-information-outline", "Sobre", "#features"],
-      ["mdi-download-box-outline", "Download", "#download"],
-      ["mdi-currency-usd", "Preços", "#pricing"],
-      ["mdi-email-outline", "Contatos", "#contact"],
+      ["mdi-home-outline", "Inicio", "#hero"],
+      ["mdi-information-outline", "Nosotros", "#features"],
+      ["mdi-download-box-outline", "Proyectos", "#download"],
+      // ["mdi-currency-usd", "Preços", "#pricing"],
+      ["mdi-email-outline", "Contácto", "#contact"],
     ],
   }),
   props: {

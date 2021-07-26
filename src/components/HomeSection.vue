@@ -10,6 +10,7 @@
                 Somos una empresa de servicios especializada en el desarrollo de soluciones de software.
                 
               </h1>
+              <h1>{{ $t('hello.world') }}</h1>
               <v-btn
                 rounded
                 outlined
