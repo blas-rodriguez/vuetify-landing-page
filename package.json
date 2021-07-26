@@ -7,12 +7,17 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@mdi/font": "^5.9.55",
+    "@mdi/js": "^5.9.55",
     "core-js": "^3.8.2",
     "deepai": "^1.0.17",
     "emailjs-com": "^3.2.0",
     "firebase": "^7.24.0",
+    "mdi-vue": "^3.0.7",
     "vue": "^2.6.12",
+    "vue-country-flag": "^2.2.0",
     "vue-i18n": "^8.25.0",
+    "vue-mdijs": "^0.4.26",
     "vue-youtube-embed": "^2.2.2",
     "vuetify": "^2.4.2"
   },

@@ -1,25 +1,25 @@
 <template>
-  <div>
+  <!-- <div> -->
     
       <v-menu>
         <template   v-slot:activator="{ on, attrs }">
           <v-btn icon  v-bind="attrs" v-on="on">
-            <v-icon>mdi-home-vertical</v-icon>
+            <v-icon>mdi-translate </v-icon>
           </v-btn>
         </template>
 
         <v-list>
-          <v-list-item @click="onClick">
-            <v-list-item-title>Option 1</v-list-item-title>
+          
+          <!-- <v-list-item @click="onClick" v-for="language in languages" :key="language.locale"> -->
+          <v-list-item  v-for="language in languages" :key="language.locale" @click="changeLanguage(language.locale)">
+            <v-col> <country-flag :country='language.flag'  size='small'/></v-col>        
+            <v-list-item-title>{{ language.title }}</v-list-item-title>  
           </v-list-item>
 
-          <v-list-item disabled>
-            <v-list-item-title>Option 2</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item @click="onClick">
+          <!-- <v-list-item @click="onClick">
             <v-list-item-title>Option 3</v-list-item-title>
-          </v-list-item>
+          </v-list-item> -->
+
         </v-list>
       </v-menu>
     
@@ -29,29 +29,37 @@
       @click="changeLanguage(language.locale)">
         {{ language.title }}
     </v-btn> -->
-  </div>
+  <!-- </div> -->
 </template>
 
-<style scoped>
-.v-toolbar {
-  transition: 0.6s;
+<style>
+.country-flag {
+  padding: 100px;
+  margin: 10px;
+  padding-left: 100px;
 }
-
-.expand {
-  height: 80px !important;
-  padding-top: 10px;
+.v-list-item {
+  padding: 100px;
+  /* margin: 100px;
+  padding-left: 100px; */
 }
 </style>
 
 <script>
 import { i18n } from "@/plugins/i18n";
+import CountryFlag from 'vue-country-flag'
+
+
 export default {
   name: "LanguageComponent",
   computed: {
     languages() {
       return [
-        { locale: "es", title: this.$t("spanish") },
-        { locale: "en", title: this.$t("english") },
+        { locale: "es", title: this.$t("spanish"), flag: "es" },
+        { locale: "en", title: this.$t("english"),flag: "us" },
+        { locale: "br", title: this.$t("portuguese"),flag: "br" },
+        { locale: "fr", title: this.$t("French"),flag: "fr" },
+        { locale: "it", title: this.$t("Italian"),flag: "it" },
       ];
     },
   },

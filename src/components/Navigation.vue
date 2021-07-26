@@ -73,9 +73,9 @@
         <v-btn rounded outlined text @click="$vuetify.goTo('#contact')">
           <span class="mr-2">Contácto</span>
         </v-btn>
-        <v-btn >
+
           <Language />
-        </v-btn>
+
         
         
       </div>

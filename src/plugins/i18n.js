@@ -8,14 +8,40 @@ const messages = {
             world: 'Hola Mundo!'
         },
         spanish: 'Español',
-        english: 'Inglés'
+        english: 'Inglés',
+        portuguese: 'Portuguez'
     },
     en: {
         hello: {
             world: 'Hello World!'
         },
         spanish: 'Spanish',
-        english: 'English'
+        english: 'English',
+        portuguese: 'Portuguese'
+    },
+    br: {
+        hello: {
+            world: 'Hello World!'
+        },
+        spanish: 'Spanish',
+        english: 'English',
+        portuguese: 'Portuguez'
+    },
+    fr: {
+        hello: {
+            world: 'Hello World!'
+        },
+        spanish: 'Spanish',
+        english: 'English',
+        portuguese: 'Portuguez'
+    },
+    it: {
+        hello: {
+            world: 'Hello World!'
+        },
+        spanish: 'Spanish',
+        english: 'English',
+        portuguese: 'Portuguez'
     }
 
 }
