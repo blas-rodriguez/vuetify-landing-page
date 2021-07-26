@@ -73,12 +73,8 @@
         <v-btn rounded outlined text @click="$vuetify.goTo('#contact')">
           <span class="mr-2">Contácto</span>
         </v-btn>
-
-          <Language />
-
-        
-        
       </div>
+      <Language />
     </v-app-bar>
   </div>
 </template>
@@ -109,6 +105,7 @@ export default {
       ["mdi-download-box-outline", "Proyectos", "#download"],
       // ["mdi-currency-usd", "Preços", "#pricing"],
       ["mdi-email-outline", "Contácto", "#contact"],
+      ["mdi-translate-outline", "Idioma", "#"],
     ],
   }),
   props: {
