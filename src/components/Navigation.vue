@@ -105,7 +105,6 @@ export default {
       ["mdi-download-box-outline", "Proyectos", "#download"],
       // ["mdi-currency-usd", "Preços", "#pricing"],
       ["mdi-email-outline", "Contácto", "#contact"],
-      ["mdi-translate-outline", "Idioma", "#"],
     ],
   }),
   props: {
