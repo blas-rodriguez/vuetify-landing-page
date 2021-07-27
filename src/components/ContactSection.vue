@@ -5,14 +5,14 @@
         <v-col cols="10">
           <v-row justify="center">
             <v-col cols="12" sm="5">
-              <h1 class="font-weight-light display-1">Contáctenos</h1>
+              <h1 class="font-weight-light display-1">{{this.$t("navigate.contact")}}</h1>
               <h3 class="font-weight-light mt-3">
-                Complete el formulario y responderemos a la brevedad.
+                {{this.$t("contact.copete")}}               
               </h3>
               <h3 class="font-weight-light mt-3"></h3>
               <h3 class="font-weight-light mt-3">
-                whatsapp: <br /><a href="https://api.whatsapp.com/send?phone=543804564857" target="_blank" rel="noopener noreferrer">Blas Rodriguez</a> <br />
-                <a href="https://api.whatsapp.com/send?phone=543804253038" target="_blank" rel="noopener noreferrer">Florencia Barrera</a>
+                 <a href="https://t.me/blasrodriguez934" target="_blank" rel="noopener noreferrer"><v-icon>mdi-telegram </v-icon></a><a href="https://api.whatsapp.com/send?phone=543804564857" target="_blank" rel="noopener noreferrer"><v-icon>mdi-whatsapp </v-icon></a>   Blas Rodriguez  <br />
+                <a href="https://t.me/blasrodriguez934" target="_blank" rel="noopener noreferrer"><v-icon>mdi-telegram </v-icon></a><a href="https://api.whatsapp.com/send?phone=543804564857" target="_blank" rel="noopener noreferrer"><v-icon>mdi-whatsapp </v-icon></a>   Florencia Barrera<br />
               </h3>
               <h3 class="font-weight-light">Email: goodjobsistemas@gmail.com</h3>
             </v-col>
@@ -26,21 +26,21 @@
                 <v-text-field
                   v-model="name"
                   :rules="nameRules"
-                  label="Nombre"
                   name="user_name"
+                  :label="$t('contact.name')"
                   required
-                ></v-text-field>
+                > </v-text-field>
                 <v-text-field
                   v-model="email"
                   :rules="emailRules"
-                  label="E-mail"
+                  :label="$t('contact.email')"
                   name="user_email"
                   required
                 ></v-text-field>
                 <v-textarea
                   v-model="textArea"
                   :rules="textAreaRules"
-                  label="Mensage"
+                  :label="$t('contact.message')"
                   name="message"
                   required
                 />
@@ -56,7 +56,7 @@
                   :loading="loading4"
                   
                 >
-                  <input type="submit" value="Enviar" />
+                  <input type="submit" :value="this.$t('contact.send')" />
                   <template v-slot:loader>
                     <span class="custom-loader">
                       <v-icon light>mdi-cached</v-icon>

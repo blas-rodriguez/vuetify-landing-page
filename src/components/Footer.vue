@@ -15,7 +15,7 @@
       </v-card-text>
 
       <v-card-text class="white--text pt-0">
-        Comenzamos nuestras actividades en el año 2018.
+        {{this.$t("footer.copete")}}
       </v-card-text>
 
       <v-divider></v-divider>

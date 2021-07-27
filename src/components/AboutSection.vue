@@ -5,9 +5,9 @@
         <v-col cols="10">
           <v-row align="center" justify="center">
             <v-col cols="12" md="7">
-              <h1 class="font-weight-light display-2">Nosotros</h1>
+              <h1 class="font-weight-light display-2">{{this.$t("navigate.team")}}</h1>
               <h1 class="font-weight-light display-1 mb-3">
-                Consultoría de negocios.
+                {{this.$t("about.copete")}}
               </h1>
               <v-row>
                 <v-col cols="12" class="d-flex align-center">
@@ -17,7 +17,7 @@
                     class="mr-4"
                   />
                   <p class="text-justify">
-                    Desde entonces ofrecemos servicios a empresas del país y el exterior, basándonos en nuestra amplia experiencia en el liderazgo de proyectos de software, diseño y desarrollo de aplicaciones, animación y tecnología aplicada a mejorar la gestión de nuestros clientes.
+                    {{this.$t("about.copete1")}}
                   </p>
                 </v-col>
                 <v-col cols="12" class="d-flex align-center">
@@ -27,7 +27,7 @@
                     class="mr-4"
                   />
                   <p class="text-justify">
-                    Desde entonces ofrecemos servicios a empresas del país y el exterior, basándonos en nuestra amplia experiencia en el liderazgo de proyectos de software, diseño y desarrollo de aplicaciones, animación y tecnología aplicada a mejorar la gestión de nuestros clientes.
+                    {{this.$t("about.copete2")}}
                   </p>
                 </v-col>
                 <v-col cols="12" class="d-flex align-center">
@@ -37,7 +37,7 @@
                     class="mr-4"
                   />
                   <p class="text-justify">
-                    Resolvemos necesidades para diversos tipos de clientes y mercados.Brindamos la información necesaria para evaluar, planificar y tomar decisiones.Diseñamos, implementamos y brindamos soluciones globales, para diversos tipos de negocio.
+                    {{this.$t("about.copete3")}}
                   </p>
                 </v-col>
               </v-row>

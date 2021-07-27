@@ -5,12 +5,11 @@
         <v-col cols="10">
           <v-row align="center" justify="center">
             <v-col cols="12" md="6" xl="8">
-              <h1 class="display-2 font-weight-bold mb-4">Oportunidades nuevas para tus negocios</h1>
+              <h1 class="display-2 font-weight-bold mb-4">{{ this.$t("home.copete") }}</h1>
               <h1 class="font-weight-light">
-                Somos una empresa de servicios especializada en el desarrollo de soluciones de software.
-                
+                {{ this.$t("home.historia") }}              
               </h1>
-              <h1>{{ $t('hello.world') }}</h1>
+              
               <v-btn
                 rounded
                 outlined
@@ -19,7 +18,8 @@
                 @click="$vuetify.goTo('#features')"
                 class="mt-5"
               >
-                Saber más
+              {{ this.$t("home.more") }} 
+                
                 <v-icon class="ml-2">mdi-arrow-down</v-icon>
               </v-btn>
               <div class="video d-flex align-center py-4">
@@ -62,7 +62,7 @@
                     />
                   </svg>
                 </a>
-                <p class="subheading ml-2 mb-0">Video institucional</p>
+                <p class="subheading ml-2 mb-0"> {{ this.$t("home.video") }}</p>
               </div>
             </v-col>
             <v-col cols="12" md="6" xl="4" class="hidden-sm-and-down"> </v-col>
@@ -130,28 +130,48 @@
 </template>
 
 <script>
+import { i18n } from "@/plugins/i18n";
 export default {
+  computed: {
+    features() {
+      return [
+        { img: require("@/assets/img/icon2.png"),
+          title:this.$t('home.cart1'),
+          text: this.$t('home.cart11'), },
+       {
+          img: require("@/assets/img/icon1.png"),
+          title: this.$t('home.cart2'),
+          text: this.$t('home.cart22'),
+        },
+        {
+          img: require("@/assets/img/icon3.png"),
+          title: this.$t('home.cart3'),
+          text: this.$t('home.cart3'),
+        },
+      ];
+    },
+  },
   data() {
     return {
       dialog: false,
       videoId: "i8IvvHJssWE",
-      features: [
-        {
-          img: require("@/assets/img/icon2.png"),
-          title: "Diseño limpio",
-          text: "Diseño simple y moderno.",
-        },
-        {
-          img: require("@/assets/img/icon1.png"),
-          title: "Datos Seguros",
-          text: "Contamos con las medidas de seguridad que ustede necesita",
-        },
-        {
-          img: require("@/assets/img/icon3.png"),
-          title: "Código seguro",
-          text: "Trabajamos con seguridad para su sistema",
-        },
-      ],
+      // features: [
+      //   {
+      //     img: require("@/assets/img/icon2.png"),
+      //     title:this.$t('home.cart1'),
+      //     text: this.$t('home.cart11'),
+      //   },
+      //   {
+      //     img: require("@/assets/img/icon1.png"),
+      //     title: this.$t('home.cart2'),
+      //     text: this.$t('home.cart22'),
+      //   },
+      //   {
+      //     img: require("@/assets/img/icon3.png"),
+      //     title: this.$t('home.cart3'),
+      //     text: this.$t('home.cart3'),
+      //   },
+      // ],
     };
   },
   watch: {

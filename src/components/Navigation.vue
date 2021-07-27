@@ -13,8 +13,7 @@
             <img src="@/assets/img/logo.png" alt="Logo" />
           </v-list-item-avatar>
           <v-list-item-content>
-            <v-list-item-title class="title">Good Job</v-list-item-title>
-            <!-- <v-list-item-subtitle>WEB</v-list-item-subtitle> -->
+            <v-list-item-title class="title">{{ this.$t("navigate.title") }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -59,19 +58,19 @@
       />
       <div v-else>
         <v-btn text @click="$vuetify.goTo('#hero')">
-          <span class="mr-2">Inicio</span>
+          <span class="mr-2">{{ this.$t("navigate.home") }}</span>
         </v-btn>
         <v-btn text @click="$vuetify.goTo('#features')">
-          <span class="mr-2">Nosotros</span>
+          <span class="mr-2">{{ this.$t("navigate.team") }}</span>
         </v-btn>
         <v-btn text @click="$vuetify.goTo('#download')">
-          <span class="mr-2">Proyectos</span>
+          <span class="mr-2">{{ this.$t("navigate.projec") }}</span>
         </v-btn>
         <!-- <v-btn text @click="$vuetify.goTo('#pricing')">
           <span class="mr-2">Precios</span>
         </v-btn> -->
         <v-btn rounded outlined text @click="$vuetify.goTo('#contact')">
-          <span class="mr-2">Contácto</span>
+          <span class="mr-2">{{ this.$t("navigate.contact") }}</span>
         </v-btn>
       </div>
       <Language />
@@ -100,11 +99,11 @@ export default {
     drawer: null,
     isXs: false,
     items: [
-      ["mdi-home-outline", "Inicio", "#hero"],
-      ["mdi-information-outline", "Nosotros", "#features"],
-      ["mdi-download-box-outline", "Proyectos", "#download"],
+      ["mdi-home-outline", this.$t("navigate.home"), "#hero"],
+      ["mdi-information-outline", this.$t("navigate.team"), "#features"],
+      ["mdi-download-box-outline", this.$t("navigate.projec"), "#download"],
       // ["mdi-currency-usd", "Preços", "#pricing"],
-      ["mdi-email-outline", "Contácto", "#contact"],
+      ["mdi-email-outline", this.$t("navigate.contact"), "#contact"],
     ],
   }),
   props: {
