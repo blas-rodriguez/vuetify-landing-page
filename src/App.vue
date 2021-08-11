@@ -47,6 +47,7 @@ import about from "./components/AboutSection";
 import download from "./components/DownloadSection";
 import pricing from "./components/PricingSection";
 import contact from "./components/ContactSection";
+import { i18n } from "@/plugins/i18n";
 
 export default {
   name: "App",
@@ -60,6 +61,7 @@ export default {
     download,
     pricing,
     contact,
+    i18n,
   },
 
   data: () => ({

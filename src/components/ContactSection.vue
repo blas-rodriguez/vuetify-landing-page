@@ -1,5 +1,7 @@
 <template>
+
   <section class="pb-8" id="contact">
+    <h3 class="font-weight-light mt-3">Empresas que confiaron en nosotroas</h3>
     <v-container fluid>
       <v-row align="center" justify="center">
         <v-col cols="10">

@@ -13,7 +13,8 @@
             <img src="@/assets/img/logo.png" alt="Logo" />
           </v-list-item-avatar>
           <v-list-item-content>
-            <v-list-item-title class="title">{{ this.$t("navigate.title") }}</v-list-item-title>
+            <v-list-item-title class="title">{{ $t("navigate.title") }}</v-list-item-title>
+            <!-- <v-list-item-subtitle>WEB</v-list-item-subtitle> -->
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -58,19 +59,19 @@
       />
       <div v-else>
         <v-btn text @click="$vuetify.goTo('#hero')">
-          <span class="mr-2">{{ this.$t("navigate.home") }}</span>
+          <span class="mr-2">{{ $t("navigate.home") }}</span>
         </v-btn>
         <v-btn text @click="$vuetify.goTo('#features')">
-          <span class="mr-2">{{ this.$t("navigate.team") }}</span>
+          <span class="mr-3">{{ $t("navigate.team") }}</span>
         </v-btn>
         <v-btn text @click="$vuetify.goTo('#download')">
-          <span class="mr-2">{{ this.$t("navigate.projec") }}</span>
+          <span class="mr-2">{{ $t("navigate.projec") }}</span>
         </v-btn>
         <!-- <v-btn text @click="$vuetify.goTo('#pricing')">
           <span class="mr-2">Precios</span>
         </v-btn> -->
         <v-btn rounded outlined text @click="$vuetify.goTo('#contact')">
-          <span class="mr-2">{{ this.$t("navigate.contact") }}</span>
+          <span class="mr-2">{{  $t("navigate.contact") }}</span>
         </v-btn>
       </div>
       <Language />
@@ -82,7 +83,6 @@
 .v-toolbar {
   transition: 0.6s;
 }
-
 .expand {
   height: 80px !important;
   padding-top: 10px;
@@ -91,32 +91,37 @@
 
 <script>
 import Language from './Language.vue'
+import { i18n } from "@/plugins/i18n";
 export default {
   components: {
     Language,
+    i18n,
   },
   data: () => ({
+    locale:i18n.locale,
     drawer: null,
     isXs: false,
-    items: [
-      ["mdi-home-outline", this.$t("navigate.home"), "#hero"],
-      ["mdi-information-outline", this.$t("navigate.team"), "#features"],
-      ["mdi-download-box-outline", this.$t("navigate.projec"), "#download"],
-      // ["mdi-currency-usd", "Preços", "#pricing"],
-      ["mdi-email-outline", this.$t("navigate.contact"), "#contact"],
-    ],
+    items: [],
   }),
   props: {
     color: String,
     flat: Boolean,
   },
   methods: {
+    
     onResize() {
+       this.items= [
+       ["mdi-home-outline", this.$t("navigate.home"), "#hero"],
+      ["mdi-information-outline", this.$t("navigate.team"), "#features"],
+      ["mdi-download-box-outline", this.$t("navigate.projec"), "#download"],
+      // ["mdi-currency-usd", "Preços", "#pricing"],
+      ["mdi-email-outline", this.$t("navigate.contact"), "#contact"],
+    ],
       this.isXs = window.innerWidth < 850;
     },
   },
-
   watch: {
+    
     isXs(value) {
       if (!value) {
         if (this.drawer) {
@@ -126,6 +131,13 @@ export default {
     },
   },
   mounted() {
+     this.items= [
+       ["mdi-home-outline", this.$t("navigate.home"), "#hero"],
+      ["mdi-information-outline", this.$t("navigate.team"), "#features"],
+      ["mdi-download-box-outline", this.$t("navigate.projec"), "#download"],
+      // ["mdi-currency-usd", "Preços", "#pricing"],
+      ["mdi-email-outline", this.$t("navigate.contact"), "#contact"],
+    ],
     this.onResize();
     window.addEventListener("resize", this.onResize, { passive: true });
   },
