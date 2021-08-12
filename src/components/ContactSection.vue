@@ -1,22 +1,73 @@
 <template>
-
   <section class="pb-8" id="contact">
-    <h3 class="font-weight-light mt-3">Empresas que confiaron en nosotroas</h3>
-    <v-container fluid>
+     <v-container fluid>
+    
+   
       <v-row align="center" justify="center">
         <v-col cols="10">
-          <v-row justify="center">
+            <v-row justify="center">
+      <h1 class="font-weight-light display-1">
+        Empresas que confiaron en nosotros
+      </h1>
+
+      <v-row justify="center">
+        <v-col cols="9" sm="3">
+          <v-img
+            src="https://d3ugyf2ht6aenh.cloudfront.net/stores/972/047/themes/common/logo-1387739079-1619612292-af1f4b11b005ed851350fcea60a064ab1619612292-320-0.jpg?0"
+           
+          ></v-img>
+        </v-col>
+
+        <v-col cols="9" sm="3">
+          <v-img src="https://static.wixstatic.com/media/7f2d86_a5c77e7abe504379b3ccebca42febd7e~mv2.png/v1/fill/w_499,h_494,al_c,q_85,usm_0.66_1.00_0.01/logo%20png.webp">
+            
+          </v-img>
+        </v-col>
+
+        <v-col cols="9" sm="3">
+          <v-img src="https://scontent.fcor10-3.fna.fbcdn.net/v/t1.6435-9/203078815_275982457611967_5124623691295930420_n.png?_nc_cat=106&ccb=1-4&_nc_sid=09cbfe&_nc_ohc=li_SKJWQrbIAX_psuOO&_nc_ht=scontent.fcor10-3.fna&oh=9a37d667db5a4cd146ca210c55434d34&oe=613ADD35">
+            
+          </v-img>
+        </v-col>
+      </v-row>
+    
             <v-col cols="12" sm="5">
-              <h1 class="font-weight-light display-1">{{this.$t("navigate.contact")}}</h1>
+              <h1 class="font-weight-light display-1">
+                {{ this.$t("navigate.contact") }}
+              </h1>
               <h3 class="font-weight-light mt-3">
-                {{this.$t("contact.copete")}}               
+                {{ this.$t("contact.copete") }}
               </h3>
               <h3 class="font-weight-light mt-3"></h3>
               <h3 class="font-weight-light mt-3">
-                 <a href="https://t.me/blasrodriguez934" target="_blank" rel="noopener noreferrer"><v-icon>mdi-telegram </v-icon></a><a href="https://api.whatsapp.com/send?phone=543804564857" target="_blank" rel="noopener noreferrer"><v-icon>mdi-whatsapp </v-icon></a>   Blas Rodriguez  <br />
-                <a href="https://t.me/blasrodriguez934" target="_blank" rel="noopener noreferrer"><v-icon>mdi-telegram </v-icon></a><a href="https://api.whatsapp.com/send?phone=543804564857" target="_blank" rel="noopener noreferrer"><v-icon>mdi-whatsapp </v-icon></a>   Florencia Barrera<br />
+                <a
+                  href="https://t.me/blasrodriguez934"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><v-icon>mdi-telegram </v-icon></a
+                ><a
+                  href="https://api.whatsapp.com/send?phone=543804564857"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><v-icon>mdi-whatsapp </v-icon></a
+                >
+                Blas Rodriguez <br />
+                <a
+                  href="https://t.me/blasrodriguez934"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><v-icon>mdi-telegram </v-icon></a
+                ><a
+                  href="https://api.whatsapp.com/send?phone=543804564857"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><v-icon>mdi-whatsapp </v-icon></a
+                >
+                Florencia Barrera<br />
               </h3>
-              <h3 class="font-weight-light">Email: goodjobsistemas@gmail.com</h3>
+              <h3 class="font-weight-light">
+                Email: goodjobsistemas@gmail.com
+              </h3>
             </v-col>
             <v-col cols="12" sm="7">
               <v-form
@@ -31,7 +82,8 @@
                   name="user_name"
                   :label="$t('contact.name')"
                   required
-                > </v-text-field>
+                >
+                </v-text-field>
                 <v-text-field
                   v-model="email"
                   :rules="emailRules"
@@ -56,7 +108,6 @@
                   value="Send"
                   type="submit"
                   :loading="loading4"
-                  
                 >
                   <input type="submit" :value="this.$t('contact.send')" />
                   <template v-slot:loader>
@@ -93,6 +144,23 @@
 </template>
 
 <style scoped>
+.bottom-gradient {
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.4) 0%,
+    transparent 72px
+  );
+}
+
+.repeating-gradient {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 0, 0, 0.25),
+    rgba(255, 0, 0, 0.25) 5px,
+    rgba(0, 0, 255, 0.25) 5px,
+    rgba(0, 0, 255, 0.25) 10px
+  );
+}
 #contact {
   background-color: #f4f7f5;
 }
@@ -182,20 +250,18 @@ export default {
       color: "",
     },
   }),
-  watch: {
-    
-  },
+  watch: {},
 
   methods: {
     loaderON() {
-      this.loading4=true;
+      this.loading4 = true;
     },
     loaderOff() {
-      this.loading4=false;
+      this.loading4 = false;
     },
-    sendEmail: function(e) {
-    // sendEmail()   {
-       this.loading4=true;
+    sendEmail: function (e) {
+      // sendEmail()   {
+      this.loading4 = true;
       emailjs
         .sendForm(
           EMAILJS_SERVICE_ID,
@@ -206,11 +272,11 @@ export default {
         .then(
           (result) => {
             // console.log("SUCCESS!", result.status, result.text);
-             this.loading4=false;
+            this.loading4 = false;
           },
           (error) => {
             // console.log("FAILED...", error);
-            this.loading4=false;
+            this.loading4 = false;
           }
         );
     },
