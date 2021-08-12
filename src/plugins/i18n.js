@@ -35,6 +35,7 @@ const messages = {
             email: 'E-mail',
             message: 'Mensaje',
             send: 'Enviar',
+            confidence: 'Empresas que confiaron en nosotros'
         },
         footer: {
             copete: ' Comenzamos nuestras actividades en el año 2018.',
@@ -76,6 +77,7 @@ const messages = {
             email: 'E-mail',
             message: 'Message',
             send: 'Send',
+            confidence: 'Companies that trusted us'
         },
         footer: {
             copete: 'We started our activities in 2018.',
@@ -117,6 +119,7 @@ const messages = {
             email: 'E-mail',
             message: 'Mensagem',
             send: 'Mandar',
+            confidence: 'Empresas que confiaram em nós'
         },
         footer: {
             copete: ' Iniciamos nossas atividades em 2018.',

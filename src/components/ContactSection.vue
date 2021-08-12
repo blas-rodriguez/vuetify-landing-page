@@ -7,7 +7,8 @@
         <v-col cols="10">
             <v-row justify="center">
       <h1 class="font-weight-light display-1">
-        Empresas que confiaron en nosotros
+       
+         {{ this.$t("contact.confidence") }}
       </h1>
 
       <v-row justify="center">
