@@ -28,19 +28,16 @@
                 hide-delimiters
               >
                 <v-carousel-item v-for="(slide, i) in slides" :key="i">
-                  <!-- <v-sheet :color="colors[i]"  height="100%"> -->
-                  <!-- <v-sheet  > -->
                   <h1 align="center" class="font-weight-light display-2 mb-2">
-                    {{ slide }} Proyecto
+                    {{ slide }} 
                   </h1>
                   <h1 align="center" class="font-weight-light">
                     {{ frases[i] }}
-                    <!-- Tenemos una gran cantidad de proyectos realizados -->
                   </h1>
                   <v-row class="fill-height" align="center" justify="center">
                     <!-- <div class="text-h2">{{ slide }} Slide</div> -->
 
-                    <div class="video d-flex align-center py-4">
+                    <!-- <div class="video d-flex align-center py-4">
                       <a @click.stop="dialog = true" class="playBut">
                         <svg
                           version="1.1"
@@ -81,7 +78,7 @@
                         </svg>
                       </a>
                       <p class="subheading ml-2 mb-0">Mirá el video {{ videoId[i] }}</p>
-                    </div>
+                    </div> -->
                     <v-dialog v-model="dialog" max-width="640px">
                       <v-card>
                         <youtube
@@ -132,11 +129,11 @@ export default {
         "MtT5_PgLJlY",
       ],
       frases: [
-        "Descripción del sistema1",
-        "Descripción del sistema2",
-        "Descripción del sistema3",
-        "Descripción del sistema4",
-        "Descripción del sistema5",
+        "Puntos de ventas, control de stock, venta por usuarios",
+        "Moodle, sistema de pagos por alumno a medida",
+        "Punto de venta por usuarios",
+        "Ecomerce de productos y servicios",
+        "Sistemas administrables",
       ],
       colors: [
         "indigo",
@@ -145,7 +142,7 @@ export default {
         "red lighten-1",
         "deep-purple accent-4",
       ],
-      slides: ["First", "Second", "Third", "Fourth", "Fifth"],
+      slides: ["Sistemas Multisucursales", "Sistemas para centros educativos", "Sistemas para Farmacias", "Sistemas Ecomerce", "Sistemas CMS"],
     };
   },
   watch: {
