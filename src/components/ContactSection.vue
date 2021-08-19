@@ -7,25 +7,43 @@
         <v-col cols="10">
             <v-row justify="center">
       <h1 class="font-weight-light display-1">
-       
          {{ this.$t("contact.confidence") }}
       </h1>
 
       <v-row justify="center">
-        <v-col cols="9" sm="3">
+        <v-col cols="9" sm="1" >
+         <!--  <v-hover v-slot:default="{ hover }">
+                <v-card
+                  class="card"
+                  shaped
+                  :elevation="hover ? 10 : 4"
+                  :class="{ up: hover }"
+                >
+                  <v-img
+                    :src="feature.img"
+                    max-width="100px"
+                    class="d-block ml-auto mr-auto"
+                    :class="{ 'zoom-efect': hover }"
+                  ></v-img>
+                  <h1 class="font-weight-regular">{{ feature.title }}</h1>
+                  <h4 class="font-weight-regular subtitle-1">
+                    {{ feature.text }}
+                  </h4>
+                </v-card>
+              </v-hover>-->
           <v-img
             src="https://d3ugyf2ht6aenh.cloudfront.net/stores/972/047/themes/common/logo-1387739079-1619612292-af1f4b11b005ed851350fcea60a064ab1619612292-320-0.jpg?0"
-           
-          ></v-img>
-        </v-col>
 
-        <v-col cols="9" sm="3">
+          ></v-img>
+        </v-col> 
+
+        <v-col cols="9" sm="1" >
           <v-img src="https://static.wixstatic.com/media/7f2d86_a5c77e7abe504379b3ccebca42febd7e~mv2.png/v1/fill/w_499,h_494,al_c,q_85,usm_0.66_1.00_0.01/logo%20png.webp">
             
           </v-img>
         </v-col>
 
-        <v-col cols="9" sm="3">
+        <v-col cols="9" sm="1" >
           <v-img src="https://scontent.fcor10-3.fna.fbcdn.net/v/t1.6435-9/203078815_275982457611967_5124623691295930420_n.png?_nc_cat=106&ccb=1-4&_nc_sid=09cbfe&_nc_ohc=li_SKJWQrbIAX_psuOO&_nc_ht=scontent.fcor10-3.fna&oh=9a37d667db5a4cd146ca210c55434d34&oe=613ADD35">
             
           </v-img>
